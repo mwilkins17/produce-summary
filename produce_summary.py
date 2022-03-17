@@ -46,12 +46,15 @@ def daily_report():
         the_file = open (f"um-deliveries-day-{day_count}.txt")
         for line in the_file:
             line = line.rstrip()
+            # print(line)
             words = line.split('|')
+            # print(words)
 
             melon = words[0]
-            count = words [0]
-            amount = words[0]
+            count = words [1]
+            amount = words[2]
 
-            print(f"Delivered {count} {melon}s for a total of ${amount}")
+            print(f"Day {day_count}: Delivered {count} {melon}s for a total of ${amount}")
             day_count += 1
         the_file.close()
+daily_report()

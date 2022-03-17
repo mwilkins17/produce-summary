@@ -39,9 +39,9 @@
 #     print(f"Delivered {count} {melon}s for total of ${amount}")
 # the_file.close()
 
-
-def daily_report():
-    day_count = 1
+day_count = 1
+def daily_report(day_count):
+    
     while day_count < 4:
         the_file = open (f"um-deliveries-day-{day_count}.txt")
         for line in the_file:
@@ -55,6 +55,6 @@ def daily_report():
             amount = words[2]
 
             print(f"Day {day_count}: Delivered {count} {melon}s for a total of ${amount}")
-            day_count += 1
+        day_count += 1
         the_file.close()
-daily_report()
+daily_report(day_count)
